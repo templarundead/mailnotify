@@ -18,7 +18,7 @@ jobs:
         uses: ./
         with:
           # mail server settings
-          server_address: ${{ secrets.SERVER_ADRESS }}
+          server_address: ${{ secrets.SERVER_ADDRESS }}
           server_port: ${{ secrets.SERVER_PORT }}
           # user credentials
           username: ${{ secrets.GMAIL_USERNAME }}
