@@ -1,0 +1,33 @@
+name: send-mail
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Hello World
+        run: echo Hello, world!
+      - name: Send mail
+        if: always()
+        uses: ./
+        with:
+          # mail server settings
+          server_address: ${{ secrets.SERVER_ADRESS }}
+          server_port: ${{ secrets.SERVER_PORT }}
+          # user credentials
+          username: ${{ secrets.GMAIL_USERNAME }}
+          password: ${{ secrets.GMAIL_PASSWORD }}
+          # email subject
+          subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+          # email body as text
+          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          # comma-separated string, send email to
+          to: ${{ secrets.MAILRU_USERNAME }}
+          # from email name
+          from: ${{ github.repository }}

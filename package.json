@@ -1,0 +1,24 @@
+{
+  "name": "action-send-mail",
+  "version": "1.0.0",
+  "description": "An action that simply sends a mail to multiple recipients.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/templarundead/mailnotify.git"
+  },
+  "author": "templarundead",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/templarundead/mailnotify/issues"
+  },
+  "homepage": "https://github.com/templarundead/mailnotify/#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "nodemailer": "^6.4.17",
+    "showdown": "^1.9.1"
+  }
+}
